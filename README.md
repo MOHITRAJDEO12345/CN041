@@ -2,7 +2,7 @@
 CONNVERSE
 CN041
 1. MOHIT RAJ DEO 
-2. SAHID AFRID KHAN 
+2. SHAHID AFRID KHAN 
 
 Website for a club/student organisation to manage evenets.
 
