@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Sign In</title>
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+
+    background-image: url('img/sign\ in.jpg');
+    background-size: cover; /* Adjust the image size to cover the entire viewport */
+    background-position: center;
+
+}
+
+.login-container {
+    text-align: center;
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+#login-form input[type="text"], 
+#login-form input[type="password"] {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: calc(100% - 24px); /* Adjust input width */
+}
+
+#login-form button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+
+#anime-character {
+    font-size: 80px;
+}
+</style>
+</head>
+<body>
+  <div class="login-container">
+    <div id="anime-character">😐</div>
+    <form id="login-form">
+        <input type="text" id="username" placeholder="Username" autocomplete="off">
+        <input type="password" id="password" placeholder="Password" autocomplete="off">
+        <button type="submit">Login</button>
+        <button type="submit"><a href="/HomePage.html">Home</a></button>
+    </form>
+</div>
+
+<script>
+  document.getElementById('username').addEventListener('focus', function() {
+    document.getElementById('anime-character').textContent = '😊'; // Change to your anime character happy image
+});
+
+document.getElementById('password').addEventListener('focus', function() {
+    document.getElementById('anime-character').textContent = '🤫shhhh'; // Change to your anime character secretive image
+});
+
+document.getElementById('login-form').addEventListener('focusout', function(e) {
+    if (!e.currentTarget.contains(e.relatedTarget)) { // Checks if the focus has moved out of the form
+        document.getElementById('anime-character').textContent = '😐nope'; // Resets to the neutral image
+    }
+});
+</script>
+</body>
+</html>
